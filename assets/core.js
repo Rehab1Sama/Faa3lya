@@ -1,6 +1,6 @@
 /* ============ الاتصال بقاعدة البيانات ============ */
-const SB_URL='https://nqknqogtistvsuypbxsi.supabase.co';
-const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5xa25xb2d0aXN0dnN1eXBieHNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM2MzI2NDIsImV4cCI6MjEwOTIwODY0Mn0.gcYcB41PB2gUYBtiJQ8V5_TIodPaFYAGrYntWmMs61Y';
+const SB_URL='https://irhzjasfkotqlctstgyw.supabase.co';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlyaHpqYXNma290cWxjdHN0Z3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUyOTExNDksImV4cCI6MjExMDg2NzE0OX0.pK694weHk2VM_Lvg5axzMYllQOGcBh2F9OKMhq4_ogw';
 const ERR_AR={bad_code:'الرمز غير صحيح',locked:'هذا اليوم معتمد، ولا يعدِّله إلا القائدة',not_owner:'هذه الحلقة ليست من حلقاتكِ',taken:'أخذت هذه الحلقة مشرفة أخرى قبلكِ',no_name:'اختاري اسمكِ أولًا',short:'الرمز قصير جدًا',too_big:'البيانات أكبر من المسموح',net:'تعذَّر الاتصال، تأكَّدي من الإنترنت وحاولي مرَّة أخرى'};
 async function rpc(fn,args){
   let r;try{r=await fetch(SB_URL+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},body:JSON.stringify(args||{})})}catch(e){throw new Error(ERR_AR.net)}
